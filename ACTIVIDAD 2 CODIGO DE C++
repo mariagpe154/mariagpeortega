@@ -1,0 +1,26 @@
+#include <iostream>
+
+int main() {
+    double num1, num2;
+    
+    // pedir el ingreso de los valore
+    std::cout << "ingrese el primer valor: ";
+    std::cin >> num1;
+    
+    std::cout << "ingrese el segundo valor: ";
+    std::cin >> num2;
+    
+    // realizar las operaciones
+    double suma = num1 + num2;
+    double resta = num1 - num2;
+    double multiplicacion = num1 * num2;
+    double division = num1 / num2;
+    
+    // mostrar los resultados 
+    std::cout <<"la suma de " <<num1<< " y " <<num2<< " es: " << suma << std::endl;
+    std::cout <<"la resta de " <<num1<< " y " <<num2<< " es: " << resta << std::endl;
+    std::cout <<"la multiplicacion de " <<num1<< " y " <<num2<< " es: " << multiplicacion << std::endl;
+    std::cout <<"la division de " <<num1<< " y " <<num2<< " es: " << division<< std::endl;
+
+    return 0;
+}
