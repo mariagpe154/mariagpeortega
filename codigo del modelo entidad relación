@@ -1,0 +1,22 @@
+
+CREATE TABLE Empleado (
+    Id_Empleado INT PRIMARY KEY,
+    Fecha_de_ingreso DATE,
+    Id_centro_de_trabajo INT,
+    Id_Puesto INT,
+    Nombre VARCHAR(50),
+    Apellido_Paterno VARCHAR(50),
+    Apellido_Materno VARCHAR(50),
+    RFC VARCHAR(13),
+    Fecha_de_nacimiento DATE,
+    FOREIGN KEY (Id_centro_de_trabajo) REFERENCES Centro_de_Trabajo(Id_Centro_de_trabajo),
+    FOREIGN KEY (Id_Puesto) REFERENCES Puesto(Id_Puesto)
+);
+
+CREATE TABLE DIRECTIVO (
+    Id_Empleado INT,
+    Id_Directivo INT,
+    Prestaciones VARCHAR(80),
+    PRIMARY KEY (Id_Empleado),
+    FOREIGN KEY (Id_Empleado) REFERENCES Empleado(Id_Empleado)
+);
