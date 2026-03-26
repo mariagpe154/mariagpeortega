@@ -1,0 +1,44 @@
+-- Crear tabla PUESTO
+CREATE TABLE PUESTO (
+    id_puesto INT PRIMARY KEY,
+    puesto VARCHAR(100),
+    horario VARCHAR(50),
+    descripcion TEXT,
+    sueldo DECIMAL(10, 2)
+);
+
+-- Crear tabla CENTRO_DE_TRABAJO
+CREATE TABLE CENTRO_DE_TRABAJO (
+    id_centro_trabajo INT PRIMARY KEY,
+    nombre_centro VARCHAR(150),
+    direccion VARCHAR(255),
+    ciudad VARCHAR(100),
+    descripcion_centro TEXT
+);
+
+-- Crear tabla EMPLEADO
+CREATE TABLE EMPLEADO (
+    id_empleado INT PRIMARY KEY,
+    RFC VARCHAR(13),
+    apellido_paterno VARCHAR(50),
+    apellido_materno VARCHAR(50),
+    nombre VARCHAR(100),
+    fecha_nacimiento DATE,
+    fecha_ingreso DATE,
+    id_puesto INT,
+    id_centro_trabajo INT,
+    id_directivo INT,
+    FOREIGN KEY (id_puesto) REFERENCES PUESTO(id_puesto),
+    FOREIGN KEY (id_centro_trabajo) REFERENCES CENTRO_DE_TRABAJO(id_centro_trabajo)
+);
+
+-- Crear tabla DIRECTIVO
+CREATE TABLE DIRECTIVO (
+    id_directivo INT PRIMARY KEY,
+    prestaciones VARCHAR(255)
+);
+
+-- Relación entre EMPLEADO y DIRECTIVO (1:1)
+ALTER TABLE EMPLEADO
+ADD CONSTRAINT fk_directivo
+FOREIGN KEY (id_directivo) REFERENCES DIRECTIVO(id_directivo);
