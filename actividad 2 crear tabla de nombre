@@ -1,0 +1,4 @@
+SELECT TOP (1000) [NOMBRE]
+      ,[EDAD]
+      ,[DIRECCION]
+  FROM [TIENDA].[dbo].[ACTIVIDAD 2 TABLA]
